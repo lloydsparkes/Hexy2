@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexy2.Server", "Hexy2.Server\Hexy2.Server.csproj", "{D818A5F9-2BC9-4C29-88BA-06F9D59421A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexy2.Client", "Hexy2.Client\Hexy2.Client.csproj", "{5B683473-CBDC-4737-9A35-D7F744E25AFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexy2.Shared", "Hexy2.Shared\Hexy2.Shared.csproj", "{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D818A5F9-2BC9-4C29-88BA-06F9D59421A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D818A5F9-2BC9-4C29-88BA-06F9D59421A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D818A5F9-2BC9-4C29-88BA-06F9D59421A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D818A5F9-2BC9-4C29-88BA-06F9D59421A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B683473-CBDC-4737-9A35-D7F744E25AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B683473-CBDC-4737-9A35-D7F744E25AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B683473-CBDC-4737-9A35-D7F744E25AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B683473-CBDC-4737-9A35-D7F744E25AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
