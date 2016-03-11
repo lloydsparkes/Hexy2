@@ -2,6 +2,7 @@
 using Hexy2.Shared.Message;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,25 @@ namespace Hexy2.Client
             using(var channel = connection.CreateModel())
             {
                 channel.QueueDeclare(Queues.I2C_COMMAND_QUEUE, true, false, false, null);
+                channel.QueueDeclare(Queues.STATUS_REPORT_QUEUE, true, false, false, null);
+
+                var consumer = new QueueingBasicConsumer(channel);
+
+                channel.BasicConsume(Queues.STATUS_REPORT_QUEUE, false, consumer);
 
                 int i = 0;
 
                 while (true)
                 {
+                    BasicDeliverEventArgs item = consumer.Queue.DequeueNoWait(null);
+                    if(item != null)
+                    {
+                        var data = Encoding.UTF8.GetString(item.Body);
+                        Console.WriteLine(data);
+
+                        channel.BasicAck(item.DeliveryTag, false);
+                    }
+
                     i = i + 10;
 
                     if(i >= 180)

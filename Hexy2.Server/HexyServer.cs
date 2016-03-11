@@ -1,16 +1,8 @@
 ﻿using RabbitMQ.Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Hexy2.Shared;
 using RabbitMQ.Client.Events;
-using Raspberry.IO.Components.Controllers.Pca9685;
-using Raspberry.IO.InterIntegratedCircuit;
-using Raspberry.IO.GeneralPurpose;
-using UnitsNet;
-using System.Threading;
 using Newtonsoft.Json;
 using Hexy2.Shared.Message;
 
@@ -21,8 +13,7 @@ namespace Hexy2.Server
         private ConnectionFactory _factory = new ConnectionFactory() { HostName = "office", UserName = "user", Password = "user" };
         private IConnection _connection;
         private IModel _channel;
-
-        private Pca9685Connection _driver;
+        private Hexy.System _system;
 
         public HexyServer()
         {
@@ -30,18 +21,16 @@ namespace Hexy2.Server
             _channel= _connection.CreateModel();
 
             _channel.QueueDeclare(Queues.I2C_COMMAND_QUEUE, true, false, false, null);
+            _channel.QueueDeclare(Queues.STATUS_REPORT_QUEUE, true, false, false, null);
 
-            var i2cDriver = new I2cDriver(ConnectorPin.P1Pin03.ToProcessor(), ConnectorPin.P1Pin05.ToProcessor());
-            var i2cConnection = i2cDriver.Connect(0x40);
-            _driver = new Pca9685Connection(i2cConnection);
-
-            _driver.SetPwmUpdateRate(Frequency.FromHertz(60));
+            _system = new Hexy.System();
         }
 
         static void Main(string[] args)
         {
             using (var server = new HexyServer())
             {
+                Console.WriteLine("Startup Completed");
                 server.Run();
             }
         }
@@ -62,13 +51,20 @@ namespace Hexy2.Server
 
                 var command = JsonConvert.DeserializeObject<ServoCommand>(message);
 
-                var pwmChannel = (PwmChannel)command.ServoChannel;
-                var pulse = DegreeToPulse(command.Degrees);
-
-                _driver.SetPwm(pwmChannel, 0, pulse);
+                _system.UpdateServo(command.ServoChannel, command.Degrees);
+                PublishReport(_system.RetrieveStatus());
 
                 _channel.BasicAck(e.DeliveryTag, false);
             }
+        }
+
+        private void PublishReport(StatusReport report)
+        {
+            var message = JsonConvert.SerializeObject(report);
+
+            var body = Encoding.UTF8.GetBytes(message);
+
+            _channel.BasicPublish("", Queues.STATUS_REPORT_QUEUE, null, body);
         }
 
         public int DegreeToPulse(int degrees)

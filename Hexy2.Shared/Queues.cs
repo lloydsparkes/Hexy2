@@ -9,5 +9,6 @@ namespace Hexy2.Shared
     public class Queues
     {
         public static string I2C_COMMAND_QUEUE = "i2c_command_queue";
+        public static string STATUS_REPORT_QUEUE = "status_report_queue";
     }
 }

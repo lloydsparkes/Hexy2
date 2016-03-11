@@ -9,6 +9,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexy2.Client", "Hexy2.Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexy2.Shared", "Hexy2.Shared\Hexy2.Shared.csproj", "{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{5C988FE7-2D30-490D-AF5F-E50D604D32B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO.InterIntegratedCircuit", "..\raspberry-sharp-io\Raspberry.IO.InterIntegratedCircuit\Raspberry.IO.InterIntegratedCircuit.csproj", "{63B8403E-BC56-43F9-A045-F61ECC3871F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO.Components", "..\raspberry-sharp-io\Raspberry.IO.Components\Raspberry.IO.Components.csproj", "{8388CFCA-E3DB-43F7-B049-2CB195211CE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO.GeneralPurpose", "..\raspberry-sharp-io\Raspberry.IO.GeneralPurpose\Raspberry.IO.GeneralPurpose.csproj", "{281C71ED-C36D-408E-8BAA-75C381DC17E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO.Interop", "..\raspberry-sharp-io\Raspberry.IO.Interop\Raspberry.IO.Interop.csproj", "{689CB6C4-3D23-45DA-8E00-87C28AEA32D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO.SerialPeripheralInterface", "..\raspberry-sharp-io\Raspberry.IO.SerialPeripheralInterface\Raspberry.IO.SerialPeripheralInterface.csproj", "{326342E5-0411-40E8-9F2D-563D6B192568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raspberry.IO", "..\raspberry-sharp-io\Raspberry.IO\Raspberry.IO.csproj", "{ACE64F17-87E5-43E7-97A0-BDDE19059C61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +41,40 @@ Global
 		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB6C79E7-E5C7-4CC3-AF7D-B2889536F7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B8403E-BC56-43F9-A045-F61ECC3871F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B8403E-BC56-43F9-A045-F61ECC3871F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B8403E-BC56-43F9-A045-F61ECC3871F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B8403E-BC56-43F9-A045-F61ECC3871F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8388CFCA-E3DB-43F7-B049-2CB195211CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8388CFCA-E3DB-43F7-B049-2CB195211CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8388CFCA-E3DB-43F7-B049-2CB195211CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8388CFCA-E3DB-43F7-B049-2CB195211CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281C71ED-C36D-408E-8BAA-75C381DC17E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281C71ED-C36D-408E-8BAA-75C381DC17E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281C71ED-C36D-408E-8BAA-75C381DC17E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281C71ED-C36D-408E-8BAA-75C381DC17E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689CB6C4-3D23-45DA-8E00-87C28AEA32D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689CB6C4-3D23-45DA-8E00-87C28AEA32D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689CB6C4-3D23-45DA-8E00-87C28AEA32D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689CB6C4-3D23-45DA-8E00-87C28AEA32D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326342E5-0411-40E8-9F2D-563D6B192568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326342E5-0411-40E8-9F2D-563D6B192568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326342E5-0411-40E8-9F2D-563D6B192568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326342E5-0411-40E8-9F2D-563D6B192568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE64F17-87E5-43E7-97A0-BDDE19059C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE64F17-87E5-43E7-97A0-BDDE19059C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE64F17-87E5-43E7-97A0-BDDE19059C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE64F17-87E5-43E7-97A0-BDDE19059C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63B8403E-BC56-43F9-A045-F61ECC3871F3} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
+		{8388CFCA-E3DB-43F7-B049-2CB195211CE8} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
+		{281C71ED-C36D-408E-8BAA-75C381DC17E7} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
+		{689CB6C4-3D23-45DA-8E00-87C28AEA32D0} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
+		{326342E5-0411-40E8-9F2D-563D6B192568} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
+		{ACE64F17-87E5-43E7-97A0-BDDE19059C61} = {5C988FE7-2D30-490D-AF5F-E50D604D32B8}
 	EndGlobalSection
 EndGlobal
