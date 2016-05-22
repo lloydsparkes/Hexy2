@@ -51,7 +51,7 @@ namespace Hexy2.Server
 
                 var command = JsonConvert.DeserializeObject<ServoCommand>(message);
 
-                _system.UpdateServo(command.ServoChannel, command.Degrees);
+                _system.UpdateServo(command.ServoBoard, command.ServoChannel, command.Degrees);
                 PublishReport(_system.RetrieveStatus());
 
                 _channel.BasicAck(e.DeliveryTag, false);

@@ -1,0 +1,12 @@
+﻿#
+# Describes the Messaging Setup
+#
+
+messaging:
+	host	= office
+	username= user
+	password= user
+
+	queues:
+		i2cCommandQueue		= i2c_command_queue
+		statusReportQueue	= status_report_queue

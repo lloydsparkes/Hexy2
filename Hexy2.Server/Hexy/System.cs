@@ -48,13 +48,19 @@ namespace Hexy2.Server.Hexy
             _servoBoardB.SetPwmUpdateRate(Frequency.FromHertz(60));
         }
 
-        public void UpdateServo(int channel, int degrees)
+        public void UpdateServo(ServoBoard board, int channel, int degrees)
         {
             var pwmChannel = (PwmChannel)channel;
             var pulse = DegreeToPulse(degrees);
 
-            _servoBoardA.SetPwm(pwmChannel, 0, pulse);
-            _servoBoardB.SetPwm(pwmChannel, 0, pulse);
+            if (board == ServoBoard.A)
+            {
+                _servoBoardA.SetPwm(pwmChannel, 0, pulse);
+            }
+            else
+            {
+                _servoBoardB.SetPwm(pwmChannel, 0, pulse);
+            }
         }
 
         public StatusReport RetrieveStatus()
@@ -79,8 +85,8 @@ namespace Hexy2.Server.Hexy
 
         private int DegreeToPulse(int degrees)
         {
-            int servoMin = 150;
-            int servoMax = 800;
+            int servoMin = 200;
+            int servoMax = 600;
             int degreeMin = 0;
             int degreeMax = 180;
 

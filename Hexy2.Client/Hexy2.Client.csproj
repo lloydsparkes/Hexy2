@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Configuration\Hexy.sparky" />
+    <None Include="Configuration\Messaging.sparky" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

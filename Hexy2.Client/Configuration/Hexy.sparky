@@ -1,0 +1,45 @@
+﻿# 
+# Describes the Setup of Hexy
+#
+
+hexy:
+	servo:
+		min = 200
+		max = 600
+
+	board:
+		/ name			/ address
+		| ServoA		| 0x40
+		| ServoB		| 0x41
+		| Compass		| 0x1E
+		| Accelerometer	| 0x53
+		| Gyro			| 0x68
+		| Environment	| 0x77
+
+	joints:
+		/ name					/ servoBoard	/ servoChannel
+		| LeftFrontAnkle		| A				| 14
+		| LeftFrontKnee			| A				| 13
+		| LeftFrontHip			| A				| 12
+
+		| LeftBackAnkle			| A				| 1
+		| LeftBackKnee			| A				| 2
+		| LeftBackHip			| A				| 3
+
+		| LeftCenterAnkle		| A				| 10
+		| LeftCenterKnee		| A				| 9
+		| LeftCenterHip			| A				| 8
+
+		| RightFrontAnkle		| B				| 0
+		| RightFrontKnee		| B				| 1
+		| RightFrontHip			| B				| 2
+
+		| RightBackAnkle		| B				| 14
+		| RightBackKnee			| B				| 13
+		| RightBackHip			| B				| 12
+
+		| RightCenterAnkle		| B				| 8
+		| RightCenterKnee		| B				| 9
+		| RightCenterHip		| B				| 10
+
+		| Neck					| B				| 7
